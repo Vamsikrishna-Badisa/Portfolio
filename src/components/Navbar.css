@@ -1,0 +1,159 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.navbar.light {
+  background: rgba(248, 249, 250, 0.95);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.dark {
+  background: rgba(26, 26, 46, 0.95);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-menu li a {
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-menu li .nav-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.navbar.light .nav-menu li a,
+.navbar.light .nav-menu li .nav-button {
+  color: #333;
+}
+
+.navbar.dark .nav-menu li a,
+.navbar.dark .nav-menu li .nav-button {
+  color: #e0e0e0;
+}
+
+.nav-menu li a::after,
+.nav-menu li .nav-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover::after,
+.nav-menu li a:hover,
+.nav-menu li .nav-button:hover::after,
+.nav-menu li .nav-button:hover {
+  width: 100%;
+  color: #6366f1;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  color: #6366f1;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6366f1;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    display: none;
+    padding: 20px;
+  }
+
+  .nav-menu.active {
+    display: flex;
+    background: inherit;
+  }
+
+  .navbar.light .nav-menu {
+    background: #f8f9fa;
+  }
+
+  .navbar.dark .nav-menu {
+    background: #1a1a2e;
+  }
+
+  .nav-menu li {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-container {
+    padding: 15px 20px;
+  }
+}
