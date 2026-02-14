@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
 import './Hero.css';
 
 const Hero = () => {
-  
+
 
   return (
     <section id="hero" className="hero">
@@ -14,7 +14,7 @@ const Hero = () => {
           Building responsive, user-friendly web applications with React.js and modern JavaScript.
           Passionate about creating beautiful interfaces and solving complex problems.
         </p>
-        
+
         <div className="hero-contact">
           <a href="mailto:vamsibadisabadisa126@gmail.com" className="contact-item">
             <FaEnvelope /> vamsibadisabadisa126@gmail.com
@@ -42,10 +42,10 @@ const Hero = () => {
       </div>
 
       <div className="hero-image">
-        <img src="/images/profile pic.png" alt="Vamsi Krishna Badisa" className="profile-pic" />
+        <img src={process.env.PUBLIC_URL + "/images/profile-pic.png"} alt="Vamsi Krishna Badisa" className="profile-pic" />
       </div>
 
-      
+
     </section>
   );
 };
